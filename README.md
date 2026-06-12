@@ -14,8 +14,8 @@ pinned: false
 A RAG-powered web application that lets you upload any PDF and ask 
 questions about it in natural language.
 
-## 🚀 Demo
-Upload a PDF → Ask questions → Get precise answers based on the document content.
+## 🌐 Live Demo
+**[Try it on Hugging Face Spaces](https://huggingface.co/spaces/5hibuya/PDFChat)**
 
 ## 🧠 How it works
 
@@ -32,16 +32,26 @@ Upload a PDF → Ask questions → Get precise answers based on the document con
 - FAISS — local vector store
 - PyPDF — PDF text extraction
 - Streamlit — web interface
+- python-dotenv — secure API key management
 
-## 🚀 How to Run
+## 🚀 How to Run locally
 
 ```bash
 pip install google-genai faiss-cpu pypdf python-dotenv streamlit
 ```
 
-Create a `.env` file: GEMINI_API_KEY=your_key_here
+Create a `.env` file:
+```
+GEMINI_API_KEY=your_key_here
+```
 
 Run the app:
 ```bash
 streamlit run app.py
 ```
+
+## 📌 Notes
+- Chunk overlap of 200 characters preserves context across boundaries
+- Session state prevents reprocessing the PDF on every interaction
+- The RAG approach surfaces only relevant sections per question,
+  avoiding token limits and improving answer precision
