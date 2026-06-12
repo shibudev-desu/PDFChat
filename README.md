@@ -1,3 +1,14 @@
+---
+title: PDFChat
+emoji: 📄
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: "1.45.0"
+app_file: app.py
+pinned: false
+---
+
 # 📄 Chat with your PDF
 
 A RAG-powered web application that lets you upload any PDF and ask 
